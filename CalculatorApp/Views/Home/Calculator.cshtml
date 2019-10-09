@@ -1,0 +1,22 @@
+﻿@model CalculatorViewModel
+
+@{
+    ViewData["Title"] = "Calculator";
+}
+
+<div class="center">
+    <h1>Calculator</h1>
+
+    <form asp-controller="Home" asp-action="Calculator" method="post">
+        <input asp-for="LeftInput" />
+        <select asp-for="Operand">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input asp-for="RightInput" />
+        <button>=</button>
+    </form>
+    <p>@Model.Result</p>
+</div>
